@@ -3,13 +3,13 @@ module.exports = {
   env: {
     es2021: true,
     node: true,
-    browser: true,
   },
   extends: [
     'airbnb-base',
+    'airbnb-typescript/base'
   ],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: './tsconfig.json',
     ecmaVersion: 'latest',
   },
   plugins: [
@@ -17,5 +17,23 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export': 0,
+  },
+  overrides: [
+    {
+      files: [
+        '**/*.spec.ts',
+      ],
+      env: {
+        jest: true,
+      },
+    },
+  ],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.ts'],
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
   },
 };

@@ -21,7 +21,13 @@
   ],
   "keywords": [
     "IMAP",
-    "client"
+    "imap",
+    "async-imap",
+    "client",
+    "imap-promise",
+    "node-imap",
+    "email",
+    "imap-client"
   ],
   "author": "wuchuheng",
   "license": "MIT",

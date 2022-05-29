@@ -50,4 +50,15 @@ export default class ImapImp implements ImapInterface {
       }
     });
   }
+
+  addBox(mailboxName: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.imap.addBox(mailboxName, (error) => {
+        if (error) {
+          return reject(error);
+        }
+        return resolve();
+      });
+    });
+  }
 }

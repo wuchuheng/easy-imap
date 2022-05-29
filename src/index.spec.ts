@@ -25,3 +25,12 @@ test('#Open mailbox test.', async () => {
   imap.destroy();
   imap.end();
 });
+
+// test('#Adding the mailbox test.', async () => {
+//   const imap = await connect(config);
+//   await imap.addBox('hello2');
+//   afterAll(() => {
+//
+//   });
+//   imap.destroy();
+// });

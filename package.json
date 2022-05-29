@@ -1,7 +1,7 @@
 {
   "name": "easy-imap",
   "version": "1.0.0",
-  "description": "An IMAP client for Node that makes communicating with IMAP servers so easy.",
+  "description": "An asynchronous IMAP client for Node that makes communicating with IMAP servers so easy.",
   "main": "lib/index.js",
   "scripts": {
     "ts:init": "tsc --init",

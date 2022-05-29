@@ -14,4 +14,6 @@ declare interface ImapInterface {
   openBox(mailboxName: string): Promise<Connection.Box>;
   openBox(mailboxName: string, openReadOnly: boolean): Promise<Connection.Box>;
   openBox(mailboxName: string, openReadOnly: boolean, modifiers: Object): Promise<Connection.Box>;
+  /** Creates a new mailbox on the server. mailboxName should include any necessary prefix/path. */
+  addBox(mailboxName: string): Promise<void>;
 }

@@ -12,9 +12,16 @@ const config: Connection.Config = {
   authTimeout: parseInt(process.env.EMAIL_AUTH_TIMEOUT || '', 10),
 };
 
-// @ts-ignore
 test('#Connection test.', async () => {
   const imap = await connect(config);
+  imap.destroy();
+  imap.end();
+});
+
+test('#Open mailbox test.', async () => {
+  const imap = await connect(config);
+  await imap.openBox('INBOX');
+  await expect(imap.openBox(`${Date.now()}`)).rejects.toThrow(Error);
   imap.destroy();
   imap.end();
 });

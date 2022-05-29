@@ -1,3 +1,6 @@
-const a: string = 'hello';
+import Connection from 'imap';
+import ImapImp from './imap/ImapImp';
 
-export { a };
+const connect = (config: Connection.Config):Promise<ImapInterface> => ImapImp.connect(config);
+
+export default connect;
